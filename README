@@ -1,0 +1,21 @@
+Aozora ruby -> *.odt converter.
+
+I've wrote it to convert some of the Aozora's txt books to more nice format for my pocket book reader.
+
+Usage is simple:
+
+  python aozora2odt.py -C <codepage> -T template.odt -o output.odt input.txt
+
+This command will read file "input.txt", encoded in the "<codepage>" encoding (usually youw ill use shift-jis, utf-8, or other Japanese encoding), and creates file "output.odt", using "template.odt" as template.
+
+Each argument, except for the input file name, may be ommited. Default codepage is utf-8.
+
+Any *.odt file can be used as template. You would probably use empty file, though it is not required. Redefine "Default" style in this file to apply formatting to your document. Using tempalte, you can define fonts, styles, page size and other document parameters. It is recommended to use template with some fine Japanese font specified, because default results are somewhat ugly, at least at my computer.
+
+
+You can process many files at once. In this case, do not use "-o" option. If output file is not specified, it is created in the current directory, with the same name as the input file, but extension replaced to ".odt".
+
+This module requires odfpy module for generating and reading odf. See http://odfpy.forge.osor.eu/
+
+Author: shintyakov <at-mark> gmai.com
+
