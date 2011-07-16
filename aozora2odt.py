@@ -102,7 +102,7 @@ def parse_aozora_line( line, gen ):
             parsed_part = parsed[ (-dotted_len) : ]
             if parsed_part != dotted_text:
                 print "#Warning! Dotted text (%d chars):"%len(dotted_text), u"".join( dotted_text ).encode( "utf-8" )
-                print "#         But parsed contains:", u"".join( parsed_part ).encode( "utf-8" )
+                print "#         But parsed contains:", u"".join( map( unicode, parsed_part) ).encode( "utf-8" )
                 print "#         Ignored"
                 return
             else:#OK. Remove dotted part from the usual text and add as emphasised
